@@ -3,6 +3,7 @@ const currencyOneEl = document.getElementById('currency-one');
 const amountOneEl = document.getElementById('amount-one');
 const currencyTwoEl = document.getElementById('currency-two');
 const amountTwoEl = document.getElementById('amount-two');
+const refreshButton = document.getElementById('refresh');
 
 // function
 const calculate = function () {
@@ -18,11 +19,16 @@ const calculate = function () {
     });
 };
 
+function refreshPage() {
+  window.location.reload();
+}
+
 // event listeners
 currencyOneEl.addEventListener('change', calculate);
 amountOneEl.addEventListener('input', calculate);
 currencyTwoEl.addEventListener('change', calculate);
 amountTwoEl.addEventListener('input', calculate);
+refreshButton.addEventListener('click', refreshPage);
 
 // initial settings
 calculate();
